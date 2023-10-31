@@ -1,0 +1,24 @@
+$breakpointWidth: 768px;
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    & > * {
+        width: 100%;
+    }
+
+    .background {
+        height: 33.33%;
+        @media only screen and (min-width: calc(#{$breakpointWidth} + 3rem)) {
+            height: 29%;
+        }
+    }
+
+    #map {
+        flex-grow: 1;
+        background-color: var(--dark-gray);
+    }
+}

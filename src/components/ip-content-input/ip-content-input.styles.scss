@@ -1,0 +1,50 @@
+$smallBreakpointWidth: 375px;
+$borderRadius: .9rem;
+
+.ip-content-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: 470px;
+
+    & > * {
+        display: flex;
+        align-items: center;
+        padding: 1.25rem 1.5rem;
+        height: 60px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    input {
+        flex-grow: 1;
+        border-bottom-left-radius: #{$borderRadius};
+        border-top-left-radius: #{$borderRadius};
+        color: var(--very-dark-gray);
+        font-family: 'Rubik';
+        font-size: 1rem;
+        font-weight: 400;
+
+        @media only screen and (max-width: calc(#{$smallBreakpointWidth})) {
+            padding: 1rem;
+            font-size: .9rem;
+        }
+        
+        &::placeholder {
+            color: var(--dark-gray);
+        }
+    }
+    
+    button {
+        border-top-right-radius: #{$borderRadius};
+        border-bottom-right-radius: #{$borderRadius};
+        background-color: var(--very-dark-gray);
+        outline: none;
+
+        &:active {
+            background-color: hsl(0, 0%, 30%);
+        }
+    }
+}
