@@ -1,8 +1,9 @@
+$breakpointWidth: 768px;
+
 .ip-content-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 1.5rem;
     
     position: fixed;
     top: 0;
@@ -10,10 +11,14 @@
 
     width: 100%;
     padding: 0 1.75rem;
+    z-index: 1001;  // leaflet's map has z-index of 1000, so set this to 1001 to make it appear on top!
 
     h2 {
-        margin-bottom: 0;
+        margin: 1.75rem 0;
         color: var(--white);
         font-weight: 500;
+        @media only screen and (min-width: calc(#{$breakpointWidth} + 3rem)) {
+            font-size: 2rem;
+        }
     }
 }

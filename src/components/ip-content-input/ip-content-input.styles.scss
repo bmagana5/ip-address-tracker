@@ -1,5 +1,6 @@
-$smallBreakpointWidth: 375px;
 $borderRadius: .9rem;
+$breakpointWidth: 768px;
+$smallBreakpointWidth: 375px;
 
 .ip-content-input-container {
     display: flex;
@@ -7,13 +8,15 @@ $borderRadius: .9rem;
     align-items: center;
 
     width: 100%;
-    max-width: 470px;
+    max-width: 550px;
 
     & > * {
         display: flex;
         align-items: center;
-        padding: 1.25rem 1.5rem;
-        height: 60px;
+        justify-content: center;
+
+        height: 55px;
+        padding: .8rem 1.25rem;
         border: none;
         cursor: pointer;
     }
@@ -24,13 +27,8 @@ $borderRadius: .9rem;
         border-top-left-radius: #{$borderRadius};
         color: var(--very-dark-gray);
         font-family: 'Rubik';
-        font-size: 1rem;
+        font-size: var(--font-size);
         font-weight: 400;
-
-        @media only screen and (max-width: calc(#{$smallBreakpointWidth})) {
-            padding: 1rem;
-            font-size: .9rem;
-        }
         
         &::placeholder {
             color: var(--dark-gray);
@@ -38,13 +36,14 @@ $borderRadius: .9rem;
     }
     
     button {
+        min-width: 60px;
         border-top-right-radius: #{$borderRadius};
         border-bottom-right-radius: #{$borderRadius};
         background-color: var(--very-dark-gray);
         outline: none;
 
         &:active {
-            background-color: hsl(0, 0%, 30%);
+            background-color: var(--very-dark-gray-active);
         }
     }
 }
